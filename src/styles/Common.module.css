@@ -1,0 +1,14 @@
+.content {
+  background-color: rgb(255,255,255,0.5);
+  width: 95%;
+  height: 95%;
+  margin:auto;
+}
+.footer {
+  margin-top :auto;
+}
+
+.menu {
+  width: 20px;
+  height: 20px;
+}

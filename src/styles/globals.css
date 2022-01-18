@@ -1,0 +1,17 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'メイリオ', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: url(/background.jpeg) ;
+  background-size: cover;
+}
+
+a {
+  color: #009688;
+}
+
+* {
+  box-sizing: border-box;
+}
