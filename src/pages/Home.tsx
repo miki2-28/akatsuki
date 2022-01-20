@@ -2,7 +2,7 @@ import React from 'react';
 import Template from './common/Template';
 
 const Home: React.FC = () => {
-  return <Template>ここにコンテンツを表示するよ</Template>;
+  return <Template menuOn={true}>ここにコンテンツを表示するよ。ふわっとでる感じのテンプレに改修したい</Template>;
 };
 
 export default Home;
