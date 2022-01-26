@@ -25,7 +25,7 @@ const Editor: React.FC<{
     const body = { title: title, summary: summary, content: content, count: count };
     try {
       const res = await axios.post('/api/createNovels', body);
-      return router.push({ pathname: 'Top', query: { title: res.data.title } });
+      return router.push({ pathname: '/Management/', query: { title: res.data.title } });
     } catch (error) {
       setMessage('失敗したー');
       return;

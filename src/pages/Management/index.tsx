@@ -25,7 +25,7 @@ const Top: React.FC = () => {
       <Template menuOn={false}>
         {router.query && <Alert severity="success">{router.query.title} を更新したよ</Alert>}
         <div>
-          <Link href="Editor">新規登録</Link>
+          <Link href="/Management/Editor">新規登録</Link>
         </div>
         <div>
           <Link href="List">編集</Link>
