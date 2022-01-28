@@ -1,0 +1,3 @@
+type Query {
+  queryRds(query: String): String @function(name: "akatsuki7f542344-dev")
+}

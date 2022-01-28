@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "akatsuki",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/user/project/akatsuki/amplify/backend/api/akatsuki/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
