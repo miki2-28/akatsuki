@@ -1,6 +1,5 @@
 // import { Novels } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
-// import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 import { queryRds } from 'src/graphql/queries';
