@@ -19,13 +19,13 @@
     "dbSchema": {
       "Type": "String"
     },
-    "dbHost": {
-      "Type": "String"
-    },
     "dbUsername": {
       "Type": "String"
     },
     "dbPassword": {
+      "Type": "String"
+    },
+    "dbHost": {
       "Type": "String"
     }
   },
@@ -85,14 +85,14 @@
             "db_schema": {
               "Ref": "dbSchema"
             },
-            "db_host": {
-              "Ref": "dbHost"
-            },
             "db_username": {
               "Ref": "dbUsername"
             },
             "db_password": {
               "Ref": "dbPassword"
+            },
+            "db_host": {
+              "Ref": "dbHost"
             }
           }
         },

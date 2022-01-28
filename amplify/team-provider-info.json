@@ -14,12 +14,12 @@
     "categories": {
       "function": {
         "akatsuki7f542344": {
+          "deploymentBucketName": "amplify-akatsuki-dev-102218-deployment",
+          "s3Key": "amplify-builds/akatsuki7f542344-4a4b5255344441477342-build.zip",
           "dbSchema": "Akatsuki",
-          "dbHost": "database-2.cxhb9pqsjuje.ap-northeast-1.rds.amazonaws.com",
           "dbUsername": "Akatsuki",
           "dbPassword": "ZAQ!2wsx",
-          "deploymentBucketName": "amplify-akatsuki-dev-102218-deployment",
-          "s3Key": "amplify-builds/akatsuki7f542344-4a4b5255344441477342-build.zip"
+          "dbHost": "akatsuki.proxy-cxhb9pqsjuje.ap-northeast-1.rds.amazonaws.com"
         }
       }
     }
