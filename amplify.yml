@@ -4,7 +4,6 @@ frontend:
     preBuild:
       commands:
         - yarn install
-        - yarn prisma migrate dev
     build:
       commands:
         - yarn run build
