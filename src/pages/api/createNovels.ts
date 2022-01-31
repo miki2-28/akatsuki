@@ -2,15 +2,16 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
-import { queryRds } from 'src/graphql/queries';
+import { createNovels } from 'src/graphql/mutations';
 
 Amplify.configure(awsmobile);
 
 const handleCreate = async (req: NextApiRequest, res: NextApiResponse) => {
   const { title, summary, content, count } = req.body;
+
   const event = await API.graphql(
-    graphqlOperation(queryRds, {
-      query: `insert into Novels (content, count, summary,title) values ('${content}', '${count}', '${summary}', '${title}')`,
+    graphqlOperation(createNovels, {
+      input: { title: title, summary: summary, content: content, count: count },
     }),
   );
 
@@ -18,17 +19,5 @@ const handleCreate = async (req: NextApiRequest, res: NextApiResponse) => {
 
   res.json(event);
 };
-
-// import { prisma } from './prisma';
-
-// const handleCreate = async (req: NextApiRequest, res: NextApiResponse<Novels>) => {
-//   const { title, summary, content, count } = req.body;
-
-//   const newNovel = await prisma.novels.create({
-//     data: { title, summary, content, count },
-//   });
-
-//   res.json(newNovel);
-// };
 
 export default handleCreate;

@@ -1,3 +1,8 @@
-type Query {
-  queryRds(query: String): String @function(name: "akatsuki7f542344-dev")
+type Novels @model {
+  id: ID!
+  title: String!
+  content: String!
+  summary: String!
+  count: Int!
+  createdAt: AWSDateTime!
 }
