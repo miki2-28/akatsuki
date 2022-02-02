@@ -2,49 +2,55 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createNovels = /* GraphQL */ `
-  mutation CreateNovels(
-    $input: CreateNovelsInput!
-    $condition: ModelNovelsConditionInput
+export const createArtworks = /* GraphQL */ `
+  mutation CreateArtworks(
+    $input: CreateArtworksInput!
+    $condition: ModelArtworksConditionInput
   ) {
-    createNovels(input: $input, condition: $condition) {
+    createArtworks(input: $input, condition: $condition) {
       id
       title
       content
       summary
       count
+      URL
+      category
       createdAt
       updatedAt
     }
   }
 `;
-export const updateNovels = /* GraphQL */ `
-  mutation UpdateNovels(
-    $input: UpdateNovelsInput!
-    $condition: ModelNovelsConditionInput
+export const updateArtworks = /* GraphQL */ `
+  mutation UpdateArtworks(
+    $input: UpdateArtworksInput!
+    $condition: ModelArtworksConditionInput
   ) {
-    updateNovels(input: $input, condition: $condition) {
+    updateArtworks(input: $input, condition: $condition) {
       id
       title
       content
       summary
       count
+      URL
+      category
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteNovels = /* GraphQL */ `
-  mutation DeleteNovels(
-    $input: DeleteNovelsInput!
-    $condition: ModelNovelsConditionInput
+export const deleteArtworks = /* GraphQL */ `
+  mutation DeleteArtworks(
+    $input: DeleteArtworksInput!
+    $condition: ModelArtworksConditionInput
   ) {
-    deleteNovels(input: $input, condition: $condition) {
+    deleteArtworks(input: $input, condition: $condition) {
       id
       title
       content
       summary
       count
+      URL
+      category
       createdAt
       updatedAt
     }

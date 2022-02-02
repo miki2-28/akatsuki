@@ -2,32 +2,36 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getNovels = /* GraphQL */ `
-  query GetNovels($id: ID!) {
-    getNovels(id: $id) {
+export const getArtworks = /* GraphQL */ `
+  query GetArtworks($id: ID!) {
+    getArtworks(id: $id) {
       id
       title
       content
       summary
       count
+      URL
+      category
       createdAt
       updatedAt
     }
   }
 `;
-export const listNovelss = /* GraphQL */ `
-  query ListNovelss(
-    $filter: ModelNovelsFilterInput
+export const listArtworkss = /* GraphQL */ `
+  query ListArtworkss(
+    $filter: ModelArtworksFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listNovelss(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listArtworkss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         title
         content
         summary
         count
+        URL
+        category
         createdAt
         updatedAt
       }

@@ -2,24 +2,28 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateNovelsInput = {
+export type CreateArtworksInput = {
   id?: string | null,
   title: string,
-  content: string,
+  content?: string | null,
   summary: string,
-  count: number,
+  count?: number | null,
+  URL?: string | null,
+  category: string,
   createdAt?: string | null,
 };
 
-export type ModelNovelsConditionInput = {
+export type ModelArtworksConditionInput = {
   title?: ModelStringInput | null,
   content?: ModelStringInput | null,
   summary?: ModelStringInput | null,
   count?: ModelIntInput | null,
+  URL?: ModelStringInput | null,
+  category?: ModelStringInput | null,
   createdAt?: ModelStringInput | null,
-  and?: Array< ModelNovelsConditionInput | null > | null,
-  or?: Array< ModelNovelsConditionInput | null > | null,
-  not?: ModelNovelsConditionInput | null,
+  and?: Array< ModelArtworksConditionInput | null > | null,
+  or?: Array< ModelArtworksConditionInput | null > | null,
+  not?: ModelArtworksConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -74,40 +78,46 @@ export type ModelIntInput = {
   attributeType?: ModelAttributeTypes | null,
 };
 
-export type Novels = {
-  __typename: "Novels",
+export type Artworks = {
+  __typename: "Artworks",
   id?: string,
   title?: string,
-  content?: string,
+  content?: string | null,
   summary?: string,
-  count?: number,
+  count?: number | null,
+  URL?: string | null,
+  category?: string,
   createdAt?: string,
   updatedAt?: string,
 };
 
-export type UpdateNovelsInput = {
+export type UpdateArtworksInput = {
   id: string,
   title?: string | null,
   content?: string | null,
   summary?: string | null,
   count?: number | null,
+  URL?: string | null,
+  category?: string | null,
   createdAt?: string | null,
 };
 
-export type DeleteNovelsInput = {
+export type DeleteArtworksInput = {
   id: string,
 };
 
-export type ModelNovelsFilterInput = {
+export type ModelArtworksFilterInput = {
   id?: ModelIDInput | null,
   title?: ModelStringInput | null,
   content?: ModelStringInput | null,
   summary?: ModelStringInput | null,
   count?: ModelIntInput | null,
+  URL?: ModelStringInput | null,
+  category?: ModelStringInput | null,
   createdAt?: ModelStringInput | null,
-  and?: Array< ModelNovelsFilterInput | null > | null,
-  or?: Array< ModelNovelsFilterInput | null > | null,
-  not?: ModelNovelsFilterInput | null,
+  and?: Array< ModelArtworksFilterInput | null > | null,
+  or?: Array< ModelArtworksFilterInput | null > | null,
+  not?: ModelArtworksFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -126,99 +136,109 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelNovelsConnection = {
-  __typename: "ModelNovelsConnection",
-  items?:  Array<Novels | null >,
+export type ModelArtworksConnection = {
+  __typename: "ModelArtworksConnection",
+  items?:  Array<Artworks | null >,
   nextToken?: string | null,
 };
 
-export type CreateNovelsMutationVariables = {
-  input?: CreateNovelsInput,
-  condition?: ModelNovelsConditionInput | null,
+export type CreateArtworksMutationVariables = {
+  input?: CreateArtworksInput,
+  condition?: ModelArtworksConditionInput | null,
 };
 
-export type CreateNovelsMutation = {
-  createNovels?:  {
-    __typename: "Novels",
+export type CreateArtworksMutation = {
+  createArtworks?:  {
+    __typename: "Artworks",
     id: string,
     title: string,
-    content: string,
+    content?: string | null,
     summary: string,
-    count: number,
+    count?: number | null,
+    URL?: string | null,
+    category: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type UpdateNovelsMutationVariables = {
-  input?: UpdateNovelsInput,
-  condition?: ModelNovelsConditionInput | null,
+export type UpdateArtworksMutationVariables = {
+  input?: UpdateArtworksInput,
+  condition?: ModelArtworksConditionInput | null,
 };
 
-export type UpdateNovelsMutation = {
-  updateNovels?:  {
-    __typename: "Novels",
+export type UpdateArtworksMutation = {
+  updateArtworks?:  {
+    __typename: "Artworks",
     id: string,
     title: string,
-    content: string,
+    content?: string | null,
     summary: string,
-    count: number,
+    count?: number | null,
+    URL?: string | null,
+    category: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type DeleteNovelsMutationVariables = {
-  input?: DeleteNovelsInput,
-  condition?: ModelNovelsConditionInput | null,
+export type DeleteArtworksMutationVariables = {
+  input?: DeleteArtworksInput,
+  condition?: ModelArtworksConditionInput | null,
 };
 
-export type DeleteNovelsMutation = {
-  deleteNovels?:  {
-    __typename: "Novels",
+export type DeleteArtworksMutation = {
+  deleteArtworks?:  {
+    __typename: "Artworks",
     id: string,
     title: string,
-    content: string,
+    content?: string | null,
     summary: string,
-    count: number,
+    count?: number | null,
+    URL?: string | null,
+    category: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type GetNovelsQueryVariables = {
+export type GetArtworksQueryVariables = {
   id?: string,
 };
 
-export type GetNovelsQuery = {
-  getNovels?:  {
-    __typename: "Novels",
+export type GetArtworksQuery = {
+  getArtworks?:  {
+    __typename: "Artworks",
     id: string,
     title: string,
-    content: string,
+    content?: string | null,
     summary: string,
-    count: number,
+    count?: number | null,
+    URL?: string | null,
+    category: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type ListNovelssQueryVariables = {
-  filter?: ModelNovelsFilterInput | null,
+export type ListArtworkssQueryVariables = {
+  filter?: ModelArtworksFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListNovelssQuery = {
-  listNovelss?:  {
-    __typename: "ModelNovelsConnection",
+export type ListArtworkssQuery = {
+  listArtworkss?:  {
+    __typename: "ModelArtworksConnection",
     items:  Array< {
-      __typename: "Novels",
+      __typename: "Artworks",
       id: string,
       title: string,
-      content: string,
+      content?: string | null,
       summary: string,
-      count: number,
+      count?: number | null,
+      URL?: string | null,
+      category: string,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -226,40 +246,46 @@ export type ListNovelssQuery = {
   } | null,
 };
 
-export type OnCreateNovelsSubscription = {
-  onCreateNovels?:  {
-    __typename: "Novels",
+export type OnCreateArtworksSubscription = {
+  onCreateArtworks?:  {
+    __typename: "Artworks",
     id: string,
     title: string,
-    content: string,
+    content?: string | null,
     summary: string,
-    count: number,
+    count?: number | null,
+    URL?: string | null,
+    category: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnUpdateNovelsSubscription = {
-  onUpdateNovels?:  {
-    __typename: "Novels",
+export type OnUpdateArtworksSubscription = {
+  onUpdateArtworks?:  {
+    __typename: "Artworks",
     id: string,
     title: string,
-    content: string,
+    content?: string | null,
     summary: string,
-    count: number,
+    count?: number | null,
+    URL?: string | null,
+    category: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnDeleteNovelsSubscription = {
-  onDeleteNovels?:  {
-    __typename: "Novels",
+export type OnDeleteArtworksSubscription = {
+  onDeleteArtworks?:  {
+    __typename: "Artworks",
     id: string,
     title: string,
-    content: string,
+    content?: string | null,
     summary: string,
-    count: number,
+    count?: number | null,
+    URL?: string | null,
+    category: string,
     createdAt: string,
     updatedAt: string,
   } | null,

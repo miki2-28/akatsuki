@@ -2,40 +2,46 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateNovels = /* GraphQL */ `
-  subscription OnCreateNovels {
-    onCreateNovels {
+export const onCreateArtworks = /* GraphQL */ `
+  subscription OnCreateArtworks {
+    onCreateArtworks {
       id
       title
       content
       summary
       count
+      URL
+      category
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateNovels = /* GraphQL */ `
-  subscription OnUpdateNovels {
-    onUpdateNovels {
+export const onUpdateArtworks = /* GraphQL */ `
+  subscription OnUpdateArtworks {
+    onUpdateArtworks {
       id
       title
       content
       summary
       count
+      URL
+      category
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteNovels = /* GraphQL */ `
-  subscription OnDeleteNovels {
-    onDeleteNovels {
+export const onDeleteArtworks = /* GraphQL */ `
+  subscription OnDeleteArtworks {
+    onDeleteArtworks {
       id
       title
       content
       summary
       count
+      URL
+      category
       createdAt
       updatedAt
     }

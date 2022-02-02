@@ -1,17 +1,20 @@
-// import { Novels } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Amplify, API, graphqlOperation } from 'aws-amplify';
-import awsmobile from '../../aws-exports';
-import { createNovels } from 'src/graphql/mutations';
+import { API, graphqlOperation } from 'aws-amplify';
 
-Amplify.configure(awsmobile);
+import { createArtworks } from 'src/graphql/mutations';
+import { CreateArtworksInput } from 'src/API';
 
-const handleCreate = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { title, summary, content, count } = req.body;
-
+const handleCreateNovel = async (req: NextApiRequest, res: NextApiResponse) => {
+  const createNovelsInput: CreateArtworksInput = {
+    title: req.body.title,
+    summary: req.body.summary,
+    content: req.body.content,
+    count: req.body.count,
+    category: 'novel',
+  };
   const event = await API.graphql(
-    graphqlOperation(createNovels, {
-      input: { title: title, summary: summary, content: content, count: count },
+    graphqlOperation(createArtworks, {
+      input: createNovelsInput,
     }),
   );
 
@@ -20,4 +23,4 @@ const handleCreate = async (req: NextApiRequest, res: NextApiResponse) => {
   res.json(event);
 };
 
-export default handleCreate;
+export default handleCreateNovel;

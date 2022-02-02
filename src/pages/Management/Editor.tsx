@@ -45,6 +45,9 @@ const Editor: React.FC<{
           <div>タイトル</div>
           <div>{title}</div>
           <Divider />
+          <div>概要</div>
+          <div>{summary}</div>
+          <Divider />
           <div>本文</div>
           <div>{content}</div>
           <Button variant="contained" color="secondary" onClick={() => setPreview(false)}>
@@ -85,7 +88,7 @@ const Editor: React.FC<{
             defaultValue={summary}
             minRows={10}
             className={style.text}
-          />{' '}
+          />
           <TextField
             id="content"
             label="本文"

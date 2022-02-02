@@ -1,8 +1,10 @@
-type Novels @model {
+type Artworks @model {
   id: ID!
   title: String!
-  content: String!
+  content: String
   summary: String!
-  count: Int!
+  count: Int
+  URL:String
+  category:String!
   createdAt: AWSDateTime!
 }

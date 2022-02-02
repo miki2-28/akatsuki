@@ -28,7 +28,7 @@ const Top: React.FC = () => {
           <Link href="/Management/Editor">新規登録</Link>
         </div>
         <div>
-          <Link href="List">編集</Link>
+          <Link href="/Management/List">編集</Link>
         </div>
         <Button variant="contained" color="primary" onClick={() => signOut(auth)}>
           Sign Out
