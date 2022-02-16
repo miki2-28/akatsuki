@@ -6,5 +6,5 @@ type Artworks @model {
   count: Int
   URL:String
   category:String!
-  createdAt: AWSDateTime!
+  published:Boolean!
 }

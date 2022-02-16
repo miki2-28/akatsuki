@@ -1,31 +1,52 @@
-import { Alert, Button, Divider, TextField } from '@mui/material';
-import React, { useState } from 'react';
+import { Alert, Button, Checkbox, Divider, TextField } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import style from '../../styles/Management.module.css';
 import Auth from '../common/Auth';
 import Template from '../common/Template';
+import { useGetNovel } from 'src/hooks/useGetNovels';
 
-const Editor: React.FC<{
-  defaultTitle?: string;
-  defaultContent?: string;
-  defaultSummary?: string;
-  defaultItemId?: number;
-}> = ({ defaultTitle, defaultContent, defaultSummary, defaultItemId }) => {
-  const [title, setTitle] = useState(defaultTitle || '');
-  const [content, setContent] = useState(defaultContent || '');
-  const [summary, setSummary] = useState(defaultSummary || '');
-  const [itemId, setItemId] = useState(defaultItemId || undefined);
+const Editor: React.FC = () => {
+  const router = useRouter();
+  const { novel } = useGetNovel(String(router.query.id) || '');
+  const [title, setTitle] = useState(novel?.title || '');
+  const [content, setContent] = useState(novel?.content || '');
+  const [summary, setSummary] = useState(novel?.summary || '');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [itemId, setItemId] = useState(router.query.id || undefined);
+  const [published, setPublished] = useState(Boolean(router.query.published) || false);
   const [message, setMessage] = useState('');
   const [preview, setPreview] = useState(false);
-  const [count, setCount] = useState(defaultContent?.length || 0);
-  const router = useRouter();
+  const [count, setCount] = useState(novel?.content?.length || 0);
 
-  const save = async () => {
-    const body = { title: title, summary: summary, content: content, count: count };
+  useEffect(() => {
+    if (novel) {
+      setTitle(novel.title);
+      setContent(novel?.content || '');
+      setSummary(novel.summary);
+      setCount(novel?.count || 0);
+      setPublished(novel?.published);
+    }
+  }, [novel]);
+
+  const update = async () => {
+    const body = { id: itemId, title: title, summary: summary, content: content, count: count, published: published };
     try {
-      const res = await axios.post('/api/createNovels', body);
-      return router.push({ pathname: '/Management/', query: { title: res.data.title } });
+      const res = await axios.post('/api/updateNovel', body);
+      console.log(res);
+      return router.push({ pathname: '/Management', query: { title: res.data.data.updateArtworks.title } });
+    } catch (error) {
+      setMessage('失敗したー');
+      return;
+    }
+  };
+
+  const create = async () => {
+    const body = { title: title, summary: summary, content: content, count: count, published: published };
+    try {
+      const res = await axios.post('/api/createNovel', body);
+      return router.push({ pathname: '/Management', query: { title: res.data.data.createArtWorks.title } });
     } catch (error) {
       setMessage('失敗したー');
       return;
@@ -42,29 +63,34 @@ const Editor: React.FC<{
     return (
       <Template menuOn={false} title={'プレビュー'}>
         <Auth>
-          <div>タイトル</div>
-          <div>{title}</div>
-          <Divider />
-          <div>概要</div>
-          <div>{summary}</div>
-          <Divider />
-          <div>本文</div>
-          <div>{content}</div>
-          <Button variant="contained" color="secondary" onClick={() => setPreview(false)}>
-            編集に戻る
-          </Button>
-          <Button variant="contained" color="primary" onClick={() => save()}>
-            保存
-          </Button>
-          <Button variant="contained" color="primary" onClick={() => setPreview(false)}>
-            投稿
-          </Button>
+          <div className={style.editor}>
+            <div style={{ fontSize: 'x-large' }}>タイトル</div>
+            <div>{title}</div>
+            <Divider sx={{ margin: '20px auto', width: '80%' }} />
+            <div style={{ fontSize: 'x-large' }}>概要</div>
+            <div>{summary}</div>
+            <Divider sx={{ margin: '20px auto', width: '80%' }} />
+            <div style={{ fontSize: 'x-large' }}>本文</div>
+            <div>{content}</div>
+            <div style={{ marginTop: 20 }}>
+              <Checkbox size="medium" defaultChecked={published} onClick={() => setPublished(!published)} />
+              公開する
+            </div>
+            <div style={{ display: 'flex', gap: 20, marginTop: 20 }}>
+              <Button variant="contained" color="secondary" onClick={() => setPreview(false)}>
+                編集に戻る
+              </Button>
+              <Button variant="contained" color="primary" onClick={() => (itemId ? update() : create())}>
+                保存
+              </Button>
+            </div>
+          </div>
         </Auth>
       </Template>
     );
   }
 
-  const pageTitle = title && content ? '新規登録' : '編集';
+  const pageTitle = itemId ? '編集' : '新規登録';
 
   return (
     <Template menuOn={false} title={pageTitle}>
@@ -102,9 +128,14 @@ const Editor: React.FC<{
             minRows={30}
             className={style.text}
           />
-          <Button variant="contained" color="primary" onClick={() => setPreview(true)}>
-            プレビュー
-          </Button>
+          <div style={{ display: 'flex', gap: 20, marginTop: 20 }}>
+            <Button variant="contained" color="primary" onClick={() => setPreview(true)}>
+              プレビュー
+            </Button>
+            <Button variant="contained" color="secondary" onClick={() => router.push({ pathname: '/Management/' })}>
+              戻る
+            </Button>
+          </div>
         </div>
       </Auth>
     </Template>

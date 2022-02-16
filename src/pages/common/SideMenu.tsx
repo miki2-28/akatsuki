@@ -11,12 +11,12 @@ import common from '../../styles/Common.module.css';
 const SideMenu: React.FC = () => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
-  console.log(open);
+
   return (
     <div className={common.menu} ref={menuRef}>
-      <MenuIcon fontSize="large" color="primary" onClick={() => setOpen(!open)} cursor="pointer" />
-      <Menu open={open} anchorEl={menuRef.current} onClose={() => setOpen(!open)}>
-        <MenuList>
+      <MenuIcon fontSize="large" color="inherit" onClick={() => setOpen(!open)} cursor="pointer" />
+      <Menu open={open} anchorEl={menuRef.current} onClose={() => setOpen(!open)} sx={{ opacity: 0.8 }}>
+        <MenuList sx={{ width: 320, outline: 0 }}>
           <MenuItem color="secondary" aria-setsize={100}>
             <ListItemIcon>
               <MenuBook fontSize="large" />

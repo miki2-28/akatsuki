@@ -10,7 +10,7 @@ export type CreateArtworksInput = {
   count?: number | null,
   URL?: string | null,
   category: string,
-  createdAt?: string | null,
+  published: boolean,
 };
 
 export type ModelArtworksConditionInput = {
@@ -20,7 +20,7 @@ export type ModelArtworksConditionInput = {
   count?: ModelIntInput | null,
   URL?: ModelStringInput | null,
   category?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
+  published?: ModelBooleanInput | null,
   and?: Array< ModelArtworksConditionInput | null > | null,
   or?: Array< ModelArtworksConditionInput | null > | null,
   not?: ModelArtworksConditionInput | null,
@@ -78,6 +78,13 @@ export type ModelIntInput = {
   attributeType?: ModelAttributeTypes | null,
 };
 
+export type ModelBooleanInput = {
+  ne?: boolean | null,
+  eq?: boolean | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
 export type Artworks = {
   __typename: "Artworks",
   id?: string,
@@ -87,6 +94,7 @@ export type Artworks = {
   count?: number | null,
   URL?: string | null,
   category?: string,
+  published?: boolean,
   createdAt?: string,
   updatedAt?: string,
 };
@@ -99,7 +107,7 @@ export type UpdateArtworksInput = {
   count?: number | null,
   URL?: string | null,
   category?: string | null,
-  createdAt?: string | null,
+  published?: boolean | null,
 };
 
 export type DeleteArtworksInput = {
@@ -114,7 +122,7 @@ export type ModelArtworksFilterInput = {
   count?: ModelIntInput | null,
   URL?: ModelStringInput | null,
   category?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
+  published?: ModelBooleanInput | null,
   and?: Array< ModelArtworksFilterInput | null > | null,
   or?: Array< ModelArtworksFilterInput | null > | null,
   not?: ModelArtworksFilterInput | null,
@@ -157,6 +165,7 @@ export type CreateArtworksMutation = {
     count?: number | null,
     URL?: string | null,
     category: string,
+    published: boolean,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -177,6 +186,7 @@ export type UpdateArtworksMutation = {
     count?: number | null,
     URL?: string | null,
     category: string,
+    published: boolean,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -197,6 +207,7 @@ export type DeleteArtworksMutation = {
     count?: number | null,
     URL?: string | null,
     category: string,
+    published: boolean,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -216,6 +227,7 @@ export type GetArtworksQuery = {
     count?: number | null,
     URL?: string | null,
     category: string,
+    published: boolean,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -239,6 +251,7 @@ export type ListArtworkssQuery = {
       count?: number | null,
       URL?: string | null,
       category: string,
+      published: boolean,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -256,6 +269,7 @@ export type OnCreateArtworksSubscription = {
     count?: number | null,
     URL?: string | null,
     category: string,
+    published: boolean,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -271,6 +285,7 @@ export type OnUpdateArtworksSubscription = {
     count?: number | null,
     URL?: string | null,
     category: string,
+    published: boolean,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -286,6 +301,7 @@ export type OnDeleteArtworksSubscription = {
     count?: number | null,
     URL?: string | null,
     category: string,
+    published: boolean,
     createdAt: string,
     updatedAt: string,
   } | null,

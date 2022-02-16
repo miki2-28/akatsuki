@@ -12,6 +12,7 @@ export const getArtworks = /* GraphQL */ `
       count
       URL
       category
+      published
       createdAt
       updatedAt
     }
@@ -32,6 +33,7 @@ export const listArtworkss = /* GraphQL */ `
         count
         URL
         category
+        published
         createdAt
         updatedAt
       }

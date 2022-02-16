@@ -3,9 +3,8 @@ import { API, graphqlOperation } from 'aws-amplify';
 import { listArtworkss } from 'src/graphql/queries';
 
 const handleGetNovels = async (req: NextApiRequest, res: NextApiResponse) => {
-  const result = await API.graphql(graphqlOperation(listArtworkss));
-
-  console.log(result);
+  const filter = req.body.filter;
+  const result = await API.graphql(graphqlOperation(listArtworkss, { filter: filter }));
 
   res.json(result);
 };

@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { API, graphqlOperation } from 'aws-amplify';
-
 import { createArtworks } from 'src/graphql/mutations';
 import { CreateArtworksInput } from 'src/API';
 
@@ -11,6 +10,7 @@ const handleCreateNovel = async (req: NextApiRequest, res: NextApiResponse) => {
     content: req.body.content,
     count: req.body.count,
     category: 'novel',
+    published: req.body.published,
   };
   const event = await API.graphql(
     graphqlOperation(createArtworks, {
