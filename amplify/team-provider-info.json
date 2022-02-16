@@ -1,27 +1,15 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-akatsuki-dev-102218-authRole",
-      "UnauthRoleArn": "arn:aws:iam::163136279884:role/amplify-akatsuki-dev-102218-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::163136279884:role/amplify-akatsuki-dev-102218-authRole",
+      "AuthRoleName": "amplify-akatsuki-dev-160529-authRole",
+      "UnauthRoleArn": "arn:aws:iam::163136279884:role/amplify-akatsuki-dev-160529-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::163136279884:role/amplify-akatsuki-dev-160529-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-akatsuki-dev-102218-deployment",
-      "UnauthRoleName": "amplify-akatsuki-dev-102218-unauthRole",
-      "StackName": "amplify-akatsuki-dev-102218",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:163136279884:stack/amplify-akatsuki-dev-102218/bfe1ea00-7fd8-11ec-a001-06f023bdb16d",
-      "AmplifyAppId": "d19u9re8djyx1g"
-    },
-    "categories": {
-      "function": {
-        "akatsuki7f542344": {
-          "deploymentBucketName": "amplify-akatsuki-dev-102218-deployment",
-          "s3Key": "amplify-builds/akatsuki7f542344-4a4b5255344441477342-build.zip",
-          "dbSchema": "Akatsuki",
-          "dbUsername": "Akatsuki",
-          "dbPassword": "ZAQ!2wsx",
-          "dbHost": "akatsuki.proxy-cxhb9pqsjuje.ap-northeast-1.rds.amazonaws.com"
-        }
-      }
+      "DeploymentBucketName": "amplify-akatsuki-dev-160529-deployment",
+      "UnauthRoleName": "amplify-akatsuki-dev-160529-unauthRole",
+      "StackName": "amplify-akatsuki-dev-160529",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:163136279884:stack/amplify-akatsuki-dev-160529/d4f99c30-8ef6-11ec-9a0d-06e2151d69f5",
+      "AmplifyAppId": "d3jgcuzenuigbv"
     }
   }
 }

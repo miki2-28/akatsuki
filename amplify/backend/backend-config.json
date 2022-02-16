@@ -1,12 +1,4 @@
 {
-  "function": {
-    "akatsuki7f542344": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
-    }
-  },
   "api": {
     "akatsuki": {
       "service": "AppSync",
@@ -17,7 +9,7 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "apiKeyExpirationDate": "2023-02-10T07:14:00.047Z",
+              "apiKeyExpirationDate": "2023-02-16T07:08:32.103Z",
               "description": ""
             }
           },
